@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background: rgb(239, 239, 218);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+section {
+    display: grid;
+    grid-template-rows: repeat(4,8rem);
+    grid-template-columns: repeat(5,8rem);
+    grid-gap: 2rem;
+    perspective: 800px;
+}
+
+.card {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+    border-radius: 10px;
+    background: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.card:hover {
+    box-shadow: rgba(0,0,0,0.8) 0px 5px 15px;
+}
+
+.front, .back {
+    position: absolute;
+    border-radius: 10px;
+    align-items: center;
+    pointer-events: none;
+}
+
+.toggleCard {
+    transform: rotateY(180deg);
+}
+
+.back {
+    background-image: linear-gradient(40deg, #9c9a4a, #e1e892);
+    backface-visibility: hidden;
+}
+
+.front {
+    background-color: white;
+}
+
+img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.card[name=hippo] .front {
+    background-color: rgb(111, 111, 111);
+}
+
+.card[name=crow] .front {
+    background-color: #7a899f;
+}
+
+.card[name=dog] .front {
+    background-color: #ffbb7c;
+}
+
+.card[name=otter] .front {
+    background-color: #9a7567;
+}
+
+.card[name=cat] .front {
+    background-color: black;
+}
+
+.card[name=frog] .front {
+    background-color: #3d5a40;
+}
+
+.card[name=shrimp] .front {
+    background-color: #966659;
+}
+
+.card[name=horse] .front {
+    background-color: rgb(190, 68, 68);
+}
+
+.card[name=fish] .front {
+    background-color: #0e1d46;
+}
+
+.card[name=cow] .front {
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+@media only screen and (max-width: 650px) {
+    section {
+        grid-template-rows: repeat(4,4rem);
+        grid-template-columns: repeat(5,4rem);
+        grid-gap: 0.5rem;
+    }
+
+    img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 359px) {
+    section {
+        grid-template-rows: repeat(4,3rem);
+        grid-template-columns: repeat(5,3rem);
+        grid-gap: 0.5rem;
+    }
+
+    img {
+        width: 3rem;
+        height: 3rem;
+    }
+    h1 {
+        font-size: 1rem;
+    }
+}
